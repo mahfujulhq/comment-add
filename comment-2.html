@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>comments</title>
+</head>
+<body>
+    <header>
+        <h1>user comments!</h1>
+    </header>
+
+    <main>
+        <section>
+            <div id="comment-section">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam nisi, obcaecati neque impedit voluptate molestiae excepturi dolore quisquam sed quaerat culpa fuga explicabo, esse minus, unde amet. Assumenda, voluptatibus molestias.</p>
+
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum maiores cumque culpa odit ullam, in saepe, molestias recusandae vitae et maxime minus autem, atque tenetur officia dolorem voluptate assumenda eos.</p>
+            </div>
+            <div>
+                <textarea name="" id="comment-box" cols="60" rows="4"></textarea>
+                <br>
+                <button id="post-button">post</button>
+            </div>
+        </section>
+    </main>
+
+    <script>
+
+        //add event listener post button 
+        document.getElementById('post-button').addEventListener('click', userComment);
+
+        function userComment(){
+            //get comment box
+            const commentBox = document.getElementById('comment-box');
+            //crete new comment
+            const newComment = document.createElement('p');
+            newComment.innerText = commentBox.value;
+            //has given some style of new comments..
+            newComment.style.backgroundColor = 'lightblue';
+            newComment.style.padding = '10px';
+
+            //add new comment as append child
+            const commentSection = document.getElementById('comment-section');
+            commentSection.appendChild(newComment);
+
+            //clear comment box text/value
+            commentBox.value = '';
+        }
+
+    </script>
+
+    <script src="js/comment-2.js"></script>
+</body>
+</html>
